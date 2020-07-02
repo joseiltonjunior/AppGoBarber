@@ -10,6 +10,7 @@ export const Container = styled(RectButton)`
   border-radius: ${responsiveSize(10)}px;
   justify-content: center;
   align-items: center;
+  margin-top: ${responsiveSize(20)}px;
 `;
 
 export const TextButtom = styled.Text`

@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {Image} from 'react-native';
 import {responsiveSize} from '../../styles/responsive';
 import colors from '../../styles/colors';
 
@@ -8,6 +9,8 @@ export const Container = styled.View`
   justify-content: center;
   padding: 0 ${responsiveSize(30)}px;
 `;
+
+export const LogoImg = styled(Image).attrs({})``;
 
 export const Title = styled.Text`
   font-family: 'RobotoSlab-Medium';
