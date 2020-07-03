@@ -7,6 +7,7 @@ import {responsiveSize} from '../../styles/responsive';
 import colors from '../../styles/colors';
 import Buttom from '../../components/Buttom';
 import Input from '../../components/Input';
+import InputPassword from '../../components/InputPassword';
 
 export const KeyboardAvoid = styled.KeyboardAvoidingView.attrs({
   behavior: Platform.OS === 'ios' ? 'padding' : undefined,
@@ -24,7 +25,8 @@ export const Container = styled.View.attrs({})`
   flex: 1;
   align-items: center;
   justify-content: center;
-  padding: 0 ${responsiveSize(30)}px;
+  padding: 0 ${responsiveSize(30)}px
+    ${Platform.OS === 'android' ? responsiveSize(130) : responsiveSize(50)}px;
 `;
 
 export const ComponentImg = styled(Image).attrs({})``;
@@ -39,6 +41,8 @@ export const Title = styled.Text`
 export const EntryButtom = styled(Buttom)``;
 
 export const SignInput = styled(Input)``;
+
+export const PasswordInput = styled(InputPassword)``;
 
 export const ForgotPassword = styled.TouchableOpacity`
   margin-top: ${responsiveSize(25)}px;

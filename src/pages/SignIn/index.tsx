@@ -1,4 +1,5 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 
 import logoImg from '../../assets/logo.png';
 
@@ -9,6 +10,7 @@ import {
   Title,
   ComponentImg,
   SignInput,
+  PasswordInput,
   EntryButtom,
   ForgotPassword,
   ForgotPasswordText,
@@ -17,33 +19,56 @@ import {
   CreateAccountIcon,
 } from './styles';
 
-const SignIn: React.FC = () => (
-  <>
-    <KeyboardAvoid>
-      <ScrollViewContainer>
-        <Container>
-          <ComponentImg source={logoImg} />
-          <>
-            <Title>Faça seu logon</Title>
-          </>
-          <SignInput name="email" icon="mail" placeholder="E-mail" />
-          <SignInput name="password" icon="lock" placeholder="Senha" />
+const SignIn: React.FC = () => {
+  const navigation = useNavigation();
 
-          <EntryButtom onPress={() => {}}>Entrar</EntryButtom>
-          <ForgotPassword onPress={() => {}}>
-            <ForgotPasswordText>Esqueçeu a senha?</ForgotPasswordText>
-          </ForgotPassword>
-        </Container>
-      </ScrollViewContainer>
-    </KeyboardAvoid>
+  return (
+    <>
+      <KeyboardAvoid>
+        <ScrollViewContainer>
+          <Container>
+            <ComponentImg source={logoImg} />
+            <>
+              <Title>Acessar conta</Title>
+            </>
+            <SignInput
+              name="email"
+              icon="mail"
+              placeholder="E-mail"
+              autoCapitalize="none"
+              autoCorrect={false}
+              autoCompleteType="email"
+              keyboardType="email-address"
+            />
+            <PasswordInput
+              name="password"
+              icon="lock"
+              placeholder="Senha"
+              autoCapitalize="none"
+              autoCorrect={false}
+              maxLength={16}
+              secureTextEntry={true}
+            />
 
-    <CreateAccount onPress={() => {}}>
-      <>
-        <CreateAccountIcon name="log-in" />
-        <CreateAccountText>Criar conta</CreateAccountText>
-      </>
-    </CreateAccount>
-  </>
-);
+            <EntryButtom onPress={() => {}}>Entrar</EntryButtom>
+            <ForgotPassword onPress={() => {}}>
+              <ForgotPasswordText>Esqueçeu a senha?</ForgotPasswordText>
+            </ForgotPassword>
+          </Container>
+        </ScrollViewContainer>
+      </KeyboardAvoid>
+
+      <CreateAccount
+        onPress={() => {
+          navigation.navigate('SignUp');
+        }}>
+        <>
+          <CreateAccountIcon name="log-in" />
+          <CreateAccountText>Criar conta</CreateAccountText>
+        </>
+      </CreateAccount>
+    </>
+  );
+};
 
 export default SignIn;

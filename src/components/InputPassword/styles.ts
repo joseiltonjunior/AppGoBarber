@@ -21,7 +21,6 @@ export const TextInput = styled.TextInput.attrs({
   color: ${colors.LightPrimary};
   font-size: ${responsiveSize(16)}px;
   font-family: 'RobotoSlab-Medium';
-  text-align: left;
 `;
 
 export const Icon = styled(FeatherIcon).attrs({
@@ -30,3 +29,10 @@ export const Icon = styled(FeatherIcon).attrs({
 })`
   margin-right: ${responsiveSize(15)}px;
 `;
+
+export const ButtomEye = styled.TouchableOpacity``;
+
+export const IconEye = styled(FeatherIcon).attrs({
+  color: colors.DarkPlaceholders,
+  size: responsiveSize(25),
+})``;
