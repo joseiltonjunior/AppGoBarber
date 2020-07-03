@@ -1,20 +1,48 @@
 import React from 'react';
 
 import logoImg from '../../assets/logo.png';
-import Input from '../../components/Input';
-import Buttom from '../../components/Buttom';
 
-import {Container, Title, LogoImg} from './styles';
+import {
+  Container,
+  ScrollViewContainer,
+  KeyboardAvoid,
+  Title,
+  ComponentImg,
+  SignInput,
+  EntryButtom,
+  ForgotPassword,
+  ForgotPasswordText,
+  CreateAccount,
+  CreateAccountText,
+  CreateAccountIcon,
+} from './styles';
 
 const SignIn: React.FC = () => (
   <>
-    <Container>
-      <LogoImg source={logoImg} />
-      <Title>Faça seu logon</Title>
-      <Input name="email" icon="mail" placeholder="E-mail" />
-      <Input name="password" icon="lock" placeholder="Senha" />
-      <Buttom onPress={() => {}}>Entrar</Buttom>
-    </Container>
+    <KeyboardAvoid>
+      <ScrollViewContainer>
+        <Container>
+          <ComponentImg source={logoImg} />
+          <>
+            <Title>Faça seu logon</Title>
+          </>
+          <SignInput name="email" icon="mail" placeholder="E-mail" />
+          <SignInput name="password" icon="lock" placeholder="Senha" />
+
+          <EntryButtom onPress={() => {}}>Entrar</EntryButtom>
+          <ForgotPassword onPress={() => {}}>
+            <ForgotPasswordText>Esqueçeu a senha?</ForgotPasswordText>
+          </ForgotPassword>
+        </Container>
+      </ScrollViewContainer>
+    </KeyboardAvoid>
+
+    <CreateAccount onPress={() => {}}>
+      <>
+        <CreateAccountIcon name="log-in" />
+        <CreateAccountText>Criar conta</CreateAccountText>
+      </>
+    </CreateAccount>
   </>
 );
 
