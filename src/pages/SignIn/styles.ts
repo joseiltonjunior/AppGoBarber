@@ -15,10 +15,8 @@ export const KeyboardAvoid = styled.KeyboardAvoidingView.attrs({
 })``;
 
 export const ScrollViewContainer = styled(ScrollView).attrs({
-  contentContainerStyle: {
-    flex: 1,
-  },
-  // keyboardShouldPersistTaps: 'handled',
+  keyboardShouldPersistTaps: 'handled',
+  justifyContent: 'center',
 })``;
 
 export const Container = styled.View.attrs({})`
@@ -26,26 +24,29 @@ export const Container = styled.View.attrs({})`
   align-items: center;
   justify-content: center;
   padding: 0 ${responsiveSize(30)}px
-    ${Platform.OS === 'android' ? responsiveSize(130) : responsiveSize(50)}px;
+    ${Platform.OS === 'android' ? responsiveSize(50) : responsiveSize(50)}px;
 `;
 
 export const ComponentImg = styled(Image).attrs({})``;
 
 export const Title = styled.Text`
   font-family: 'RobotoSlab-Medium';
-  font-size: ${responsiveSize(20)}px;
+  font-size: ${responsiveSize(18)}px;
   color: ${colors.LightPrimary};
-  margin: ${responsiveSize(50)}px 0 ${responsiveSize(20)}px;
+  margin: ${responsiveSize(30)}px 0 ${responsiveSize(20)}px;
 `;
 
-export const EntryButtom = styled(Buttom)``;
+export const EntryButtom = styled(Buttom)`
+  width: ${responsiveSize(300)}px;
+  align-self: center;
+`;
 
 export const SignInput = styled(Input)``;
 
 export const PasswordInput = styled(InputPassword)``;
 
 export const ForgotPassword = styled.TouchableOpacity`
-  margin-top: ${responsiveSize(25)}px;
+  margin: ${responsiveSize(20)}px 0;
 `;
 
 export const ForgotPasswordText = styled.Text`

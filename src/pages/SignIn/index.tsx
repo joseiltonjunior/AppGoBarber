@@ -31,6 +31,7 @@ const SignIn: React.FC = () => {
             <>
               <Title>Acessar conta</Title>
             </>
+
             <SignInput
               name="email"
               icon="mail"
@@ -51,6 +52,7 @@ const SignIn: React.FC = () => {
             />
 
             <EntryButtom onPress={() => {}}>Entrar</EntryButtom>
+
             <ForgotPassword onPress={() => {}}>
               <ForgotPasswordText>Esqueçeu a senha?</ForgotPasswordText>
             </ForgotPassword>

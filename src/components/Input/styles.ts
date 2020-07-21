@@ -5,7 +5,7 @@ import colors from '../../styles/colors';
 
 export const Container = styled.View`
   width: 100%;
-  height: ${responsiveSize(60)}px;
+  height: ${responsiveSize(55)}px;
   padding: 0 ${responsiveSize(15)}px;
   border-radius: ${responsiveSize(10)}px;
   background-color: ${colors.DarkGreySecundary};
@@ -19,7 +19,7 @@ export const TextInput = styled.TextInput.attrs({
 })`
   flex: 1;
   color: ${colors.LightPrimary};
-  font-size: ${responsiveSize(16)}px;
+  font-size: ${responsiveSize(15)}px;
   font-family: 'RobotoSlab-Medium';
   text-align: left;
 `;

@@ -5,7 +5,7 @@ import colors from '../../styles/colors';
 
 export const Container = styled(RectButton)`
   width: 100%;
-  height: ${responsiveSize(60)}px;
+  height: ${responsiveSize(55)}px;
   background-color: ${colors.OrangePrimary};
   border-radius: ${responsiveSize(10)}px;
   justify-content: center;
@@ -16,5 +16,5 @@ export const Container = styled(RectButton)`
 export const TextButtom = styled.Text`
   font-family: 'RobotoSlab-Medium';
   color: ${colors.DarkGreyPrimary};
-  font-size: ${responsiveSize(18)}px;
+  font-size: ${responsiveSize(16)}px;
 `;
