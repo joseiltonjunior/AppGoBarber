@@ -38,6 +38,7 @@ export const Title = styled.Text`
 
 export const EntryButtom = styled(Buttom)`
   margin-bottom: ${responsiveSize(5)}px;
+  width: ${responsiveSize(300)}px;
 `;
 
 export const SignInput = styled(Input)``;

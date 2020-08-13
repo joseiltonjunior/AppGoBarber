@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useCallback, useRef} from 'react';
 import {useNavigation} from '@react-navigation/native';
+import {Form} from '@unform/mobile';
+import {FormHandles} from '@unform/core';
 
 import logoImg from '../../assets/logo.png';
 
@@ -20,7 +22,12 @@ import {
 } from './styles';
 
 const SignIn: React.FC = () => {
+  const formRef = useRef<FormHandles>(null);
   const navigation = useNavigation();
+
+  const handleSignIn = useCallback((data: object) => {
+    console.log(data);
+  }, []);
 
   return (
     <>
@@ -31,27 +38,32 @@ const SignIn: React.FC = () => {
             <>
               <Title>Acessar conta</Title>
             </>
+            <Form ref={formRef} onSubmit={handleSignIn}>
+              <SignInput
+                name="email"
+                icon="mail"
+                placeholder="E-mail"
+                autoCapitalize="none"
+                autoCorrect={false}
+                autoCompleteType="email"
+                keyboardType="email-address"
+              />
+              <PasswordInput
+                name="password"
+                icon="lock"
+                placeholder="Senha"
+                autoCapitalize="none"
+                autoCorrect={false}
+                maxLength={16}
+              />
 
-            <SignInput
-              name="email"
-              icon="mail"
-              placeholder="E-mail"
-              autoCapitalize="none"
-              autoCorrect={false}
-              autoCompleteType="email"
-              keyboardType="email-address"
-            />
-            <PasswordInput
-              name="password"
-              icon="lock"
-              placeholder="Senha"
-              autoCapitalize="none"
-              autoCorrect={false}
-              maxLength={16}
-              secureTextEntry={true}
-            />
-
-            <EntryButtom onPress={() => {}}>Entrar</EntryButtom>
+              <EntryButtom
+                onPress={() => {
+                  formRef.current?.submitForm();
+                }}>
+                Entrar
+              </EntryButtom>
+            </Form>
 
             <ForgotPassword onPress={() => {}}>
               <ForgotPasswordText>Esqueçeu a senha?</ForgotPasswordText>
