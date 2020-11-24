@@ -79,3 +79,5 @@ export const CreateAccountIcon = styled(Icon).attrs({
   color: colors.OrangePrimary,
   size: responsiveSize(20),
 })``;
+
+export const TextInput = styled.TextInput``;

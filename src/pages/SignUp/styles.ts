@@ -37,7 +37,7 @@ export const Title = styled.Text`
 `;
 
 export const EntryButtom = styled(Buttom)`
-  margin-bottom: ${responsiveSize(5)}px;
+  margin-bottom: ${responsiveSize(10)}px;
   width: ${responsiveSize(300)}px;
 `;
 

@@ -2,6 +2,7 @@ import React, {useCallback, useRef} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Form} from '@unform/mobile';
 import {FormHandles} from '@unform/core';
+import {TextInput} from 'react-native';
 
 import logoImg from '../../assets/logo.png';
 
@@ -23,6 +24,8 @@ import {
 
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const passwordInputRef = useRef<TextInput>(null);
+
   const navigation = useNavigation();
 
   const handleSignIn = useCallback((data: object) => {
@@ -45,16 +48,24 @@ const SignIn: React.FC = () => {
                 placeholder="E-mail"
                 autoCapitalize="none"
                 autoCorrect={false}
-                autoCompleteType="email"
                 keyboardType="email-address"
+                returnKeyType="next"
+                onSubmitEditing={() => {
+                  passwordInputRef.current?.focus();
+                }}
               />
               <PasswordInput
+                ref={passwordInputRef}
                 name="password"
                 icon="lock"
                 placeholder="Senha"
                 autoCapitalize="none"
                 autoCorrect={false}
                 maxLength={16}
+                returnKeyType="send"
+                onSubmitEditing={() => {
+                  formRef.current?.submitForm();
+                }}
               />
 
               <EntryButtom
