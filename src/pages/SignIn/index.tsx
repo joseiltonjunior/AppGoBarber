@@ -25,6 +25,7 @@ import {
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const passwordInputRef = useRef<TextInput>(null);
+
   const navigation = useNavigation();
 
   const handleSignIn = useCallback((data: object) => {
@@ -47,11 +48,10 @@ const SignIn: React.FC = () => {
                 placeholder="E-mail"
                 autoCapitalize="none"
                 autoCorrect={false}
-                autoCompleteType="email"
                 keyboardType="email-address"
                 returnKeyType="next"
                 onSubmitEditing={() => {
-                  passwordInputRef.current.focus();
+                  passwordInputRef.current?.focus();
                 }}
               />
               <PasswordInput
