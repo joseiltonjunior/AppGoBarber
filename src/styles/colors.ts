@@ -4,4 +4,5 @@ export default {
   DarkPlaceholders: '#666360',
   LightPrimary: '#f4ede8',
   OrangePrimary: '#ff9000',
+  RedPrimary: '#c53030',
 };
